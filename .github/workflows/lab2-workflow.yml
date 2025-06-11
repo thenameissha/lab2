@@ -20,4 +20,9 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
-      - run: echo The tags are ${{ inputs.custom_message }} 
+      - name: Printing Custom Message
+        run: echo ${{ inputs.custom_message }} 
+      
+      - name : Printing run-job boolean value
+        if: ${{ inputs.run-job == 'true' }} 
+        run : echo ${{ inputs.run_job }}
